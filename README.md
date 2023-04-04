@@ -4,3 +4,10 @@ My own azure resume, following [ACG project video](https://www.youtube.com/watch
 ## First steps
 - Frontend folder contains the website.
 - main.js contains visitor counter code.
+
+## Second steps
+- Cosmos DB stores visiter counter data.
+- 
+
+## Third steps
+- 

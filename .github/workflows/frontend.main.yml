@@ -19,11 +19,13 @@ jobs:
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
+        azcliversion: latest
         inlineScript: |
             az storage blob upload-batch --account-name azureresumestoragetaka -d '$web' -s frontend/
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
+        azcliversion: latest
         inlineScript: |
            az cdn endpoint purge --content-paths  "/*" --profile-name "azureresumetaka" --name "azureresumetaka" --resource-group "azureresumerg"
 

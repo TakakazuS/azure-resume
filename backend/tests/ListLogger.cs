@@ -1,31 +1,37 @@
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Text;
+namespace tests;
 
-namespace tests
+public class ListLogger : ILogger
 {
-    public class ListLogger : ILogger
+    public IList<string> Logs;
+
+    public IDisposable BeginScope<TState>(TState state) => NullScope.Instance;
+
+    public bool IsEnabled(LogLevel logLevel) => false;
+
+    public ListLogger()
     {
-        public IList<string> Logs;
-
-        public IDisposable BeginScope<TState>(TState state) => NullScope.Instance;
-
-        public bool IsEnabled(LogLevel logLevel) => false;
-
-        public ListLogger()
-        {
-            this.Logs = new List<string>();
-        }
-
-        public void Log<TState>(LogLevel logLevel,
-                                EventId eventId,
-                                TState state,
-                                Exception exception,
-                                Func<TState, Exception, string> formatter)
-        {
-            string message = formatter(state, exception);
-            this.Logs.Add(message);
-        }
+        this.Logs = new List<string>();
     }
+
+    public void Log<TState>(LogLevel logLevel,
+                            EventId eventId,
+                            TState state,
+                            Exception exception,
+                            Func<TState, Exception, string> formatter)
+    {
+        string message = formatter(state, exception);
+        this.Logs.Add(message);
+    }
+}
+
+public class EventId
+{
+}
+
+public class LogLevel
+{
+}
+
+public interface ILogger
+{
 }

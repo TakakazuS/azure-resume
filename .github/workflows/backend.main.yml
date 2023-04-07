@@ -42,7 +42,7 @@ jobs:
         dotnet test
 
     - name: 'Run Azure Functions action'
-      uses: Azure/functions-action@v2
+      uses: Azure/functions-action@v1
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api/output'

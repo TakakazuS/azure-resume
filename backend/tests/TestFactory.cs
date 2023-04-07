@@ -1,36 +1,36 @@
-namespace tests;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Internal;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Extensions.Primitives;
+using System.Collections.Generic;
 
-public class NewBaseType
+namespace tests
 {
-    public static ILogger CreateLogger(LoggerTypes type = LoggerTypes.Null)
+    public class TestFactory
     {
-        ILogger logger;
-
-        if (type == LoggerTypes.List)
+    
+        public static HttpRequest CreateHttpRequest()
         {
-            logger = new ListLogger();
-        }
-        else
-        {
-            logger = NullLoggerFactory.Instance.CreateLogger("Null Logger");
+            var context = new DefaultHttpContext();
+            var request = context.Request;
+            return request;
         }
 
-        return logger;
+        public static ILogger CreateLogger(LoggerTypes type = LoggerTypes.Null)
+        {
+            ILogger logger;
+
+            if (type == LoggerTypes.List)
+            {
+                logger = new ListLogger();
+            }
+            else
+            {
+                logger = NullLoggerFactory.Instance.CreateLogger("Null Logger");
+            }
+
+            return logger;
+        }
     }
-}
-
-public class TestFactory : NewBaseType
-{
-    public static object? NullLoggerFactory { get; private set; }
-
-    public static HttpRequest CreateHttpRequest()
-    {
-        var context = new DefaultHttpContext();
-        var request = context.Request;
-        return (HttpRequest)request;
-    }
-}
-
-public class HttpRequest
-{
 }

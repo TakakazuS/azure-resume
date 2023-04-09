@@ -1,13 +1,13 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
-namespace Company.Function;
-
-public class Counter 
+namespace Company.Function
 {
-    
-    [JsonPropertyName("id")]
-    public string? Id {get; set;}
-    
-    [JsonPropertyName("count")]
-    public int Count {get;set;}
+    public class Counter 
+    {
+        [JsonProperty(PropertyName="id")]
+        public string Id {get; set;}
+        
+        [JsonProperty(PropertyName = "count")]
+        public int Count {get;set;}
+    }
 }

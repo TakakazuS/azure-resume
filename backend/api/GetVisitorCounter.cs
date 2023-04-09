@@ -21,12 +21,13 @@ public class GetVisitorCounter
     "Counter", ConnectionStringSetting = "AzureResumeConnectionString", Id = "1",
             PartitionKey = "1")] Counter counter)
     {
-
+        
+        counter.Count += 1;
         var response = req.CreateResponse(HttpStatusCode.OK);
         response.Headers.Add("Content-Type", "application/json; charset=utf-8");
         string jsonString = JsonSerializer.Serialize(counter);
         response.WriteString(jsonString);
-        counter.Count += 1;
+        
         return new MyOutputType()
         {
             UpdatedCounter = counter,

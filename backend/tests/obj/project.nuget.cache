@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gAyTtGcQ3L5ohvf6vRAVCe39hj34yO+ILtu+9wBqg6b5Tn1kBsxmqvDedbv84o8R8qpQmqaRjyQPnY46xHSAoA==",
+  "dgSpecHash": "VmcWlpjr/cx68+c1Q/IeV8DQSJcrad9jf4IWYCTmN3VYbW7wcDP6/q1U9dEvTJN0kKb79/4PUucPQubxknkOFQ==",
   "success": true,
   "projectFilePath": "/Users/takakazu/Desktop/azure-resume/backend/tests/tests.csproj",
   "expectedPackageFiles": [
@@ -118,7 +118,7 @@
     "/Users/takakazu/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
     "/Users/takakazu/.nuget/packages/ncrontab.signed/3.3.2/ncrontab.signed.3.3.2.nupkg.sha512",
     "/Users/takakazu/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
-    "/Users/takakazu/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/takakazu/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/takakazu/.nuget/packages/newtonsoft.json.bson/1.0.1/newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "/Users/takakazu/.nuget/packages/nuget.frameworks/5.11.0/nuget.frameworks.5.11.0.nupkg.sha512",
     "/Users/takakazu/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

@@ -23,7 +23,7 @@ namespace tests
             counter.Id = "1";
             counter.Count = 2;
             var request = TestFactory.CreateHttpRequest();
-            var response = (HttpResponseMessage) Company.Function.GetVisitorCounter.Run(request, counter, logger);
+            var response = (HttpResponse) Company.Function.GetVisitorCounter.Run(request, counter, logger);
             Assert.Equal(3, counter.Count);
         }
 

@@ -1,39 +1,34 @@
-using System;
-using System.IO;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using System.Text.Json;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using System.Net.Http;
-using System.Text;
 
+namespace Company.Function;
 
-namespace Company.Function
+public class GetVisitorCounter
 {
-    public static class GetVisitorCounter
+    private readonly ILogger _logger;
+
+    public GetVisitorCounter(ILoggerFactory loggerFactory)
     {
-        [Function("GetVisitorCounter")]
-        public static HttpResponseMessage Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            [CosmosDBInput(databaseName:"AzureResume", collectionName: "Counter", ConnectionStringSetting = "AzureResumeConnectionString", Id = "1", PartitionKey = "1")] Counter counter,
-            ILogger log)
+        _logger = loggerFactory.CreateLogger<GetVisitorCounter>();
+    }
+
+    [Function("GetVisitorCounter")]
+    public MyOutputType Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
+    [CosmosDBInput(databaseName: "AzureResume", collectionName: "Counter", ConnectionStringSetting = "AzureResumeConnectionString", Id = "1", PartitionKey = "1")] Counter counter)
+    {
+
+        var response = req.CreateResponse(HttpStatusCode.OK);
+        response.Headers.Add("Content-Type", "application/json; charset=utf-8");
+        string jsonString = JsonSerializer.Serialize(counter);
+        response.WriteString(jsonString);
+        counter.Count =+ counter.Count+1;
+        return new MyOutputType()
         {
-            // Here is where the counter gets updated.
-            log.LogInformation("C# HTTP trigger function processed a request.");
-
-            counter.Count += 1;
-
-            var jsonToRetun = JsonConvert.SerializeObject(counter);
-
-            return new HttpResponseMessage(System.Net.HttpStatusCode.OK)
-            {
-                Content = new StringContent(jsonToRetun, Encoding.UTF8, "application/json")
-            };
-
-            
-        }
+            UpdatedCounter = counter,
+            HttpResponse = response
+        };
     }
 }

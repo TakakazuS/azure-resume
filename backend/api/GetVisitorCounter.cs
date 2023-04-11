@@ -8,16 +8,17 @@ namespace Company.Function;
 
 public class GetVisitorCounter
 {
-    private readonly ILogger _logger;
+    private readonly ILogger logger;
 
     public GetVisitorCounter(ILoggerFactory loggerFactory)
     {
-        _logger = loggerFactory.CreateLogger<GetVisitorCounter>();
+        logger = loggerFactory.CreateLogger<GetVisitorCounter>();
     }
 
     [Function("GetVisitorCounter")]
     public MyOutputType Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
-    [CosmosDBInput(databaseName: "AzureResume", collectionName: "Counter", ConnectionStringSetting = "AzureResumeConnectionString", Id = "1", PartitionKey = "1")] Counter counter)
+    [CosmosDBInput(databaseName: "AzureResume", collectionName: "Counter", ConnectionStringSetting = "AzureResumeConnectionString", Id = "1", PartitionKey = "1")] Counter counter,
+    ILogger log)
     {
 
         var response = req.CreateResponse(HttpStatusCode.OK);

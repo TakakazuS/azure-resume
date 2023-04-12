@@ -1,0 +1,6 @@
+/Users/takakazu/Desktop/azure-resume/backend/tests/bin/Debug/net6.0/CoverletSourceRootsMapping
+/Users/takakazu/Desktop/azure-resume/backend/tests/obj/Debug/net6.0/tests.csproj.AssemblyReference.cache
+/Users/takakazu/Desktop/azure-resume/backend/tests/obj/Debug/net6.0/tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/takakazu/Desktop/azure-resume/backend/tests/obj/Debug/net6.0/tests.AssemblyInfoInputs.cache
+/Users/takakazu/Desktop/azure-resume/backend/tests/obj/Debug/net6.0/tests.AssemblyInfo.cs
+/Users/takakazu/Desktop/azure-resume/backend/tests/obj/Debug/net6.0/tests.csproj.CoreCompileInputs.cache

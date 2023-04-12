@@ -17,8 +17,7 @@ public class GetVisitorCounter
 
     [Function("GetVisitorCounter")]
     public MyOutputType Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
-    [CosmosDBInput(databaseName: "AzureResume", collectionName: "Counter", ConnectionStringSetting = "AzureResumeConnectionString", Id = "1", PartitionKey = "1")] Counter counter,
-    ILogger log)
+    [CosmosDBInput(databaseName: "AzureResume", collectionName: "Counter", ConnectionStringSetting = "AzureResumeConnectionString", Id = "1", PartitionKey = "1")] Counter counter)
     {
 
         var response = req.CreateResponse(HttpStatusCode.OK);

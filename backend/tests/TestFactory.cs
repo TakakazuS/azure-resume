@@ -1,23 +1,19 @@
-using System;
-using System.Collections.Generic;
-using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Primitives;
+using System.Collections.Generic;
 
 namespace tests
 {
     public class TestFactory
     {
-        public static HttpRequestData CreateHttpRequest()
+    
+        public static HttpRequest CreateHttpRequest()
         {
-            var request = new HttpRequestDataWrapper();
-            request.Method = "GET";
-            request.Url = new Uri("https://www.takakazu.me");
-            var headers = new Dictionary<string, StringValues>();
-            headers.Add("User-Agent", "Test");
-            request.Headers = new HttpHeaders(headers);
+            var context = new DefaultHttpContext();
+            var request = context.Request;
             return request;
         }
 

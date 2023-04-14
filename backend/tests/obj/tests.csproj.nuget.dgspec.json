@@ -38,10 +38,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.Azure.Functions.Extensions": {
-              "target": "Package",
-              "version": "[1.1.0, )"
-            },
             "Microsoft.Azure.Functions.Worker": {
               "target": "Package",
               "version": "[1.6.0, )"
@@ -121,29 +117,9 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
-            "Microsoft.Azure.Functions.Extensions": {
-              "target": "Package",
-              "version": "[1.1.0, )"
-            },
-            "Microsoft.Azure.Functions.Worker.Extensions.Http": {
-              "target": "Package",
-              "version": "[3.0.12, )"
-            },
-            "Microsoft.Azure.Functions.Worker.Http": {
-              "target": "Package",
-              "version": "[1.6.0, )"
-            },
-            "Microsoft.Azure.WebJobs.Extensions.Http": {
-              "target": "Package",
-              "version": "[3.2.0, )"
-            },
-            "Microsoft.NET.Sdk.Functions": {
-              "target": "Package",
-              "version": "[4.0.1, )"
-            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.3.2, )"
+              "version": "[17.1.0, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -153,13 +129,13 @@
             },
             "xunit": {
               "target": "Package",
-              "version": "[2.4.2, )"
+              "version": "[2.4.1, )"
             },
             "xunit.runner.visualstudio": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.4.5, )"
+              "version": "[2.4.3, )"
             }
           },
           "imports": [

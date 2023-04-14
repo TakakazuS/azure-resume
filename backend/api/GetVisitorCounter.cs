@@ -26,6 +26,8 @@ public class GetVisitorCounter
         response.Headers.Add("Content-Type", "application/json; charset=utf-8");
         string jsonString = JsonSerializer.Serialize(counter);
         response.WriteString(jsonString);
+
+        // Here is where the counter gets updated.
         counter.Count =+ counter.Count+1;
         return new MyOutputType()
         {

@@ -64,7 +64,7 @@ The backend is an [HTTP triggered Azure Functions](https://learn.microsoft.com/e
 # Continuous Integration and Continuous Delivery (CI/CD) pipeline
 With CI/CD, when you commit the code either from frontend or backend directory, it will get automatically pushed and deployed to the correct service.
 - Create frontend workflow.
-  - "[frontend.main.yml](https://github.com/TakakazuS/azure-resume/blob/main/.github/workflows/frontend.main.ymlfrontend)" file contains the frontend workflow.
+  - "[frontend.main.yml](https://github.com/TakakazuS/azure-resume/blob/main/.github/workflows/frontend.main.yml)" file contains the frontend workflow.
     - <[How to deploy static website in Azure Storage with Github Actions](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions?tabs=userlevel)>
 - Implement unit testing.
   - "[tests](https://github.com/TakakazuS/azure-resume/tree/main/backend/tests)" folder contains files for testing.

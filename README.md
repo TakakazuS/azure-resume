@@ -2,6 +2,7 @@
 My own azure resume, following [ACG project video](https://www.youtube.com/watch?v=ieYrBWmkfno).
 
 # What I built
+100% Azure-hosted version of my resume.\
 You can view my azure resume page from [here](https://www.takakazu.me)
 
 - Diagram
